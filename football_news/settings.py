@@ -29,12 +29,15 @@ load_dotenv()
 SECRET_KEY = 'django-insecure-6ux9kg_=46pg68th2*2ya(9l9xine-!-ygc-03%)9$x^ps3)e7'
 PRODUCTION = os.getenv('PRODUCTION', 'False').lower() == 'true'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "felicia-evangeline-footballnews.pbp.cs.ui.ac.id"]
 # Application definition
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://felicia-evangeline-footballnews.pbp.cs.ui.ac.id"
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -61,7 +64,7 @@ ROOT_URLCONF = 'football_news.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
