@@ -29,7 +29,7 @@ load_dotenv()
 SECRET_KEY = 'django-insecure-6ux9kg_=46pg68th2*2ya(9l9xine-!-ygc-03%)9$x^ps3)e7'
 PRODUCTION = os.getenv('PRODUCTION', 'False').lower() == 'true'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "felicia-evangeline-footballnews.pbp.cs.ui.ac.id"]
